@@ -1,0 +1,23 @@
+{
+  "name": "AMASI Console",
+  "authors": [
+    "Niraj Kumar Chauhan <niraj.1991@gmail.com>"
+  ],
+  "description": "A web panel for managing posts.",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.0",
+    "angular":"^1.5.0"
+  }
+}
