@@ -24,8 +24,12 @@ webpanel.controller('loginController',[ '$rootScope','$scope','$location', funct
 
     $rootScope.bodyLayout = 'hold-transition login-page';
     $scope.signin = function(user){
-       //console.log( user.email);
-        $location.path('/dashboard');
+		if(user.email === "demo@gmail.com" && user.password === "password"){
+            $location.path('/dashboard');
+        }else{
+            $scope.message = "Incorrect Credential! Try Again"
+        }
+        
     }
 
 }]);
