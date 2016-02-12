@@ -24,6 +24,7 @@ webpanel.controller('loginController',[ '$rootScope','$scope','$location', funct
 
     $rootScope.bodyLayout = 'hold-transition login-page';
     $scope.signin = function(user){
+
 		if(user.email === "demo@gmail.com" && user.password === "password"){
             $location.path('/dashboard');
         }else{
