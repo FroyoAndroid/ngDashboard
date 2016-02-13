@@ -1,0 +1,10 @@
+
+.user{
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+}
+
+.user button{
+    margin-bottom: 10px;
+}

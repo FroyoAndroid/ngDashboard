@@ -8,7 +8,7 @@ webpanel.config(['$routeProvider',
                 controller:'loginController'
             }).
             when('/dashboard', {
-                templateUrl: 'views/dashboard.html',
+                templateUrl: 'views/test.html',
                 controller: 'dashboardController'
             }).
             when('/register', {
@@ -44,9 +44,139 @@ webpanel.controller('registerController',[ '$rootScope','$scope', function($root
 }]);
 
 
-webpanel.controller('dashboardController',[ '$rootScope','$scope', function($rootScope,$scope){
+webpanel.controller('dashboardController',[ '$rootScope','$scope','users', function($rootScope,$scope,users){
 
-    $rootScope.bodyLayout = 'skin-blue sidebar-mini';
-    console.log('Dashboard Controller');
+    //$rootScope.bodyLayout = 'skin-blue sidebar-mini';
+    $rootScope.bodyLayout = 'hold-transition skin-blue layout-top-nav';
+    $scope.users = users.all();
 
 }]);
+
+webpanel.controller('menuController',['$rootScope','$scope',function($rootScope,$scope){
+
+    $scope.usermenu = function(){
+        console.log('user-menu');
+    };
+
+    $scope.postmenu = function(){
+        console.log('post-menu');
+    };
+}]);
+
+webpanel.factory('users',function(){
+
+    //Some fake testing data
+    var users = [
+        {
+            "id":"1",
+            "name":"ABC4",
+            "role": "APP USR",
+            "profile_img": "dist/img/user1-128x128.jpg",
+            "email":"abc@gmail.com",
+            "city":"California"
+        },
+        {
+            "id":"2",
+            "name":"ABC1",
+            "role": "APP USR",
+            "profile_img": "dist/img/user6-128x128.jpg",
+            "email":"abc@gmail.com",
+            "city":"California"
+        },
+        {
+            "id":"3",
+            "name":"ABC2",
+            "role": "AGENT",
+            "profile_img":"dist/img/user3-128x128.jpg",
+            "email":"abc@gmail.com",
+            "city":"California"
+        },
+        {
+            "id":"4",
+            "name":"ABC2",
+            "role": "APP USR",
+            "profile_img": "dist/img/user5-128x128.jpg",
+            "email":"abc@gmail.com",
+            "city":"California"
+        },
+        {
+            "id":"1",
+            "name":"ABC4",
+            "role": "APP USR",
+            "profile_img": "dist/img/user1-128x128.jpg",
+            "email":"abc@gmail.com",
+            "city":"California"
+        },
+        {
+            "id":"2",
+            "name":"ABC1",
+            "role": "APP USR",
+            "profile_img": "dist/img/user6-128x128.jpg",
+            "email":"abc@gmail.com",
+            "city":"California"
+        },
+        {
+            "id":"3",
+            "name":"ABC2",
+            "role": "AGENT",
+            "profile_img":"dist/img/user3-128x128.jpg",
+            "email":"abc@gmail.com",
+            "city":"California"
+        },
+        {
+            "id":"4",
+            "name":"ABC2",
+            "role": "APP USR",
+            "profile_img": "dist/img/user5-128x128.jpg",
+            "email":"abc@gmail.com",
+            "city":"California"
+        },
+        {
+            "id":"1",
+            "name":"ABC4",
+            "role": "APP USR",
+            "profile_img": "dist/img/user1-128x128.jpg",
+            "email":"abc@gmail.com",
+            "city":"California"
+        },
+        {
+            "id":"2",
+            "name":"ABC1",
+            "role": "APP USR",
+            "profile_img": "dist/img/user6-128x128.jpg",
+            "email":"abc@gmail.com",
+            "city":"California"
+        },
+        {
+            "id":"3",
+            "name":"ABC2",
+            "role": "AGENT",
+            "profile_img":"dist/img/user3-128x128.jpg",
+            "email":"abc@gmail.com",
+            "city":"California"
+        },
+        {
+            "id":"4",
+            "name":"ABC2",
+            "role": "APP USR",
+            "profile_img": "dist/img/user5-128x128.jpg",
+            "email":"abc@gmail.com",
+            "city":"California"
+        }
+    ];
+
+    return {
+        all: function() {
+            return users;
+        },
+        get: function(chatId) {
+            for (var i = 0; i < users.length; i++) {
+                if (users[i].id === parseInt(chatId)) {
+                    return users[i];
+                }
+            }
+            return null;
+        }
+    };
+
+});

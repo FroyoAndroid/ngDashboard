@@ -1,0 +1,32 @@
+{
+  "users":[
+    {
+      "name":"ABC",
+      "role": "APP USR",
+      "profile_img": "http://placehold.it/200x200",
+      "email":"abc@gmail.com",
+      "city":"California"
+    },
+    {
+      "name":"ABC",
+      "role": "APP USR",
+      "profile_img": "http://placehold.it/200x200",
+      "email":"abc@gmail.com",
+      "city":"California"
+    },
+    {
+      "name":"ABC",
+      "role": "APP USR",
+      "profile_img": "http://placehold.it/200x200",
+      "email":"abc@gmail.com",
+      "city":"California"
+    },
+    {
+      "name":"ABC",
+      "role": "APP USR",
+      "profile_img": "http://placehold.it/200x200",
+      "email":"abc@gmail.com",
+      "city":"California"
+    }
+  ]
+}
