@@ -64,11 +64,16 @@
 
         <!-- Main content -->
         <section class="content">
-            <div class="user" ng-repeat="user in users">
+            <div class="user" ng-show="$root.usermenu" ng-repeat="user in users">
                 <img ng-src="{{user.profile_img}}">
                 <span style="display: block;">{{user.name}}</span>
                 <span style="display: block;">{{user.role}}</span>
                 <button type="button" class="btn btn-default">More Info</button>
+            </div>
+            <div class="post" ng-show="(!$root.usermenu)" ng-repeat="post in posts">
+                <div><span>Title: {{post.post_title}}</span><span class="pull-right">Status: {{post.status}}</span></div>
+                <iframe id="video" width="420" height="315" src="//www.youtube.com/embed/9B7te184ZpQ?rel=0" frameborder="0" allowfullscreen></iframe>
+                <button type="button" style="margin:12px;" class="pull-right" ng-style="{'visibility' : (post.showbtn)? 'visible' : 'hidden'}" class="btn btn-default">APPROVE</button>
             </div>
         </section><!-- /.content -->
 

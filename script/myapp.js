@@ -44,23 +44,29 @@ webpanel.controller('registerController',[ '$rootScope','$scope', function($root
 }]);
 
 
-webpanel.controller('dashboardController',[ '$rootScope','$scope','users', function($rootScope,$scope,users){
+webpanel.controller('dashboardController',[ '$rootScope','$scope','users', 'posts', function($rootScope,$scope,users,posts){
 
     //$rootScope.bodyLayout = 'skin-blue sidebar-mini';
     $rootScope.bodyLayout = 'hold-transition skin-blue layout-top-nav';
-    $scope.users = users.all();
+    $rootScope.sectionTitle = "Users";
+    $rootScope.users = users.all();
+    $rootScope.usermenu = true;
 
 }]);
 
-webpanel.controller('menuController',['$rootScope','$scope',function($rootScope,$scope){
+webpanel.controller('menuController',['$rootScope','$scope', 'users', 'posts',function($rootScope,$scope,users,posts){
 
     $scope.usermenu = function(){
         $rootScope.sectionTitle = "Users";
+        $rootScope.users = users.all();
+        $rootScope.usermenu = true;
         console.log('user-menu');
     };
 
     $scope.postmenu = function(){
         $rootScope.sectionTitle = "Posts";
+        $rootScope.posts = posts.all();
+        $rootScope.usermenu = false;
         console.log('post-menu');
     };
 }]);
@@ -164,6 +170,50 @@ webpanel.factory('users',function(){
             "profile_img": "dist/img/user5-128x128.jpg",
             "email":"abc@gmail.com",
             "city":"California"
+        }
+    ];
+
+    return {
+        all: function() {
+            return users;
+        },
+        get: function(chatId) {
+            for (var i = 0; i < users.length; i++) {
+                if (users[i].id === parseInt(chatId)) {
+                    return users[i];
+                }
+            }
+            return null;
+        }
+    };
+
+});
+
+
+webpanel.factory('posts',function(){
+
+    //Some fake testing data
+    var users = [
+        {
+            "post_title" : "Code in CSS",
+            "video_src" : "//www.youtube.com/embed/9B7te184ZpQ?rel=0",
+            "date": "14 Feb 2016",
+            "status" : "PENDING",
+            "showbtn" : true
+        },
+        {
+            "post_title" : "Code in JS",
+            "video_src" : "//www.youtube.com/embed/9B7te184ZpQ?rel=0",
+            "date": "14 Feb 2016",
+            "status" : "APPROVED",
+            "showbtn" : false
+        },
+        {
+            "post_title" : "Mr x on fire",
+            "video_src" : "//www.youtube.com/embed/9B7te184ZpQ?rel=0",
+            "date": "14 Feb 2016",
+            "status" : "REJECTED",
+            "showbtn" : false
         }
     ];
 
