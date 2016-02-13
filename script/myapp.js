@@ -55,10 +55,12 @@ webpanel.controller('dashboardController',[ '$rootScope','$scope','users', funct
 webpanel.controller('menuController',['$rootScope','$scope',function($rootScope,$scope){
 
     $scope.usermenu = function(){
+        $rootScope.sectionTitle = "Users";
         console.log('user-menu');
     };
 
     $scope.postmenu = function(){
+        $rootScope.sectionTitle = "Posts";
         console.log('post-menu');
     };
 }]);
