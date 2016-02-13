@@ -1,0 +1,22 @@
+{
+  "post":[
+    {
+      "post_title" : "Mr x on fire",
+      "video_src" : "",
+      "date": "14 Feb 2016",
+      "status" : "PENDING"
+    },
+    {
+      "post_title" : "Mr x on fire",
+      "video_src" : "",
+      "date": "14 Feb 2016",
+      "status" : "APPROVED"
+    },
+    {
+      "post_title" : "Mr x on fire",
+      "video_src" : "",
+      "date": "14 Feb 2016",
+      "status" : "REJECTED"
+    }
+  ]
+}
