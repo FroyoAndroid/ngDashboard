@@ -8,7 +8,7 @@ webpanel.config(['$routeProvider',
                 controller:'loginController'
             }).
             when('/dashboard', {
-                templateUrl: 'views/dashboard.html',
+                templateUrl: 'views/test.html',
                 controller: 'dashboardController'
             }).
             when('/register', {
