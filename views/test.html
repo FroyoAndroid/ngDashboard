@@ -1,5 +1,5 @@
 
-<header class="main-header" ng-controller="menuController" ng-include="'../template/header.html'"></header>
+<header class="main-header" ng-controller="menuController" ng-include="'./template/header.html'"></header>
 <!-- Full Width Column -->
 <div class="content-wrapper" style="min-height: 576px;">
     <div class="container">
@@ -23,7 +23,7 @@
                 <iframe id="video" width="420" height="315" src="//www.youtube.com/embed/9B7te184ZpQ?rel=0" frameborder="0" allowfullscreen></iframe>
                 <button type="button" style="margin:12px;" class="pull-right" ng-style="{'visibility' : (post.showbtn)? 'visible' : 'hidden'}" class="btn btn-default">APPROVE</button>
             </div>
-            <div ng-if="($root.menu ==='event')" ng-include="'../template/event.html'"></div>
+            <div ng-if="($root.menu ==='event')" ng-include="'./template/event.html'"></div>
         </section><!-- /.content -->
 
     </div><!-- /.container -->
