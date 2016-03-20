@@ -166,7 +166,7 @@
 
     //event factory
 
-    webpanel.factory('$event', function ($http, $q, CREATE_EVENT) {
+    webpanel.factory('$event', function ($http, $q, CREATE_EVENT, GET_EVENTS) {
         var createEvent = function (event) {
             var deferred = $q.defer();
             $http.post(CREATE_EVENT, event).success(function (success) {
@@ -176,10 +176,21 @@
             });
             return deferred.promise;
         };
+
+        var getEvents = function(){
+            var deferred = $q.defer();
+            $http.get(GET_EVENTS).success(function (success) {
+                deferred.resolve(success);
+            }, function (error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        };
         return {
-            createEvent: createEvent
+            createEvent : createEvent,
+            getEvents : getEvents
         }
-    })
+    });
 
     webpanel.factory('$newsService', function ($http, $q, UPLOAD_FILE, CREATE_NEWS) {
         var upload = function (formdata) {
@@ -226,5 +237,19 @@
         }
     })
 
+    webpanel.factory('$videoService', function($http, $q, CREATE_POST){
+        var createPost = function(post){
+            var deferred = $q.defer();
+            $http.post(CREATE_POST, post).success(function (success) {
+                deferred.resolve(success);
+            }, function (error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        };
+        return {
+            createPost : createPost
+        }
+    });
 
 })();

@@ -7,6 +7,7 @@
     api.constant('CREATE_EVENT','http://amasilive.com/api/public/index.php/create/event');
     api.constant('CREATE_NEWS','http://amasilive.com/api/public/index.php/create/news');
     api.constant('UPLOAD_FILE','http://amasilive.com/api/public/index.php/upload');
-
+    api.constant('CREATE_POST','http://amasilive.com/api/public/index.php/create/post');
+    api.constant('GET_EVENTS','http://amasilive.com/api/public/index.php/events');
 
 })();

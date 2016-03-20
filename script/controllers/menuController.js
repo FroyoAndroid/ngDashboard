@@ -23,12 +23,19 @@
             $rootScope.sectionTitle = "Events";
             $rootScope.menu = "event";
             console.log('event-menu');
-        }
+        };
 
         $scope.newsmenu = function () {
             $rootScope.sectionTitle = "News";
             $rootScope.menu = "news";
-            console.log('event-menu');
+            console.log('news-menu');
+        };
+
+        $scope.videomenu = function () {
+            $rootScope.sectionTitle = "Upload Video";
+            $rootScope.menu = "video";
+            console.log('video-menu');
         }
+
     }]);
 })();

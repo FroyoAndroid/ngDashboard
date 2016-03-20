@@ -3,7 +3,7 @@
  */
 (function () {
     var news = angular.module('news', []);
-    news.controller('newsController', ['$scope', '$newsService', '$http', function ($scope, $newsService, $http) {
+    news.controller('newsController', ['$scope', '$newsService', function ($scope, $newsService) {
 
         var formdata = new FormData();
         $scope.getTheFiles = function ($files) {
@@ -14,26 +14,6 @@
 
         };
 
-        // NOW UPLOAD THE FILES.
-        $scope.uploadFiles = function () {
-
-            var request = {
-                method: 'POST',
-                url: UPLOAD_FILE,
-                data: formdata,
-                headers: {
-                    'Content-Type': undefined
-                }
-            };
-
-            // SEND THE FILES.
-            $http(request)
-                .success(function (d) {
-                    alert(d);
-                })
-                .error(function () {
-                });
-        };
 
         $scope.addNews = function (news) {
             $newsService.upload(formdata).then(function(result){
