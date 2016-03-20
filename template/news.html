@@ -1,0 +1,29 @@
+<div class="box box-warning" ng-controller="newsController">
+    <div class="box-header with-border">
+        <h3 class="box-title">Create New Event</h3>
+    </div><!-- /.box-header -->
+    <div class="box-body">
+        <form role="form">
+            <!-- text input -->
+            <div class="form-group">
+                <label>News Title</label>
+                <input type="text" class="form-control" placeholder="News Title Her" ng-model="news.news_title">
+            </div>
+            <div class="form-group">
+                <label>News Content</label>
+                <textarea class="form-control" rows="3" placeholder="News Content Here" ng-model="news.news_content"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Choose Image For News</label>
+                <input type="file"  name="uploads" ng-files="getTheFiles($files)"
+                       required />
+            </div>
+
+
+
+        </form>
+    </div><!-- /.box-body -->
+    <div class="box-footer">
+        <button type="submit" class="btn btn-primary pull-right" ng-click="addNews(news)">Submit</button>
+    </div>
+</div>

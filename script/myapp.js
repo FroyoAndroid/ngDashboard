@@ -5,7 +5,9 @@ var webpanel = angular.module('webpanel',[
     'register',
     'menu',
     'apiConstant',
-    'event'
+    'event',
+    'news',
+    'webpanel.directives'
 ]);
 
 webpanel.config(function ($httpProvider) {

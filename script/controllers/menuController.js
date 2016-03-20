@@ -21,8 +21,13 @@
 
         $scope.eventmenu = function () {
             $rootScope.sectionTitle = "Events";
-            $rootScope.usermenu = false;
             $rootScope.menu = "event";
+            console.log('event-menu');
+        }
+
+        $scope.newsmenu = function () {
+            $rootScope.sectionTitle = "News";
+            $rootScope.menu = "news";
             console.log('event-menu');
         }
     }]);
