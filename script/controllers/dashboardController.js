@@ -7,7 +7,7 @@
 
         $rootScope.bodyLayout = 'hold-transition skin-blue layout-top-nav';
         $rootScope.sectionTitle = "Users";
-        $rootScope.usermenu = "users";
+        $rootScope.menu = "users";
 
     }]);
 })();

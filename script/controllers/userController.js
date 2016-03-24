@@ -4,12 +4,15 @@
 (function(){
     webpanel.controller('userController',['$rootScope','$scope','$users', function($rootScope,$scope,$users){
 
-        var data = $users.all();
-        data.then(function(success){
-            $scope.users = success.data;
-        },function(error){
-            alert("error fetching results");
-        });
+        (function() {
+            var data = $users.all();
+
+            data.then(function (success) {
+                $scope.users = success.data;
+            }, function (error) {
+                alert("error fetching results");
+            });
+        }());
 
         $scope.approve = function(index){
             $scope.users[index].role = "AGENT";
