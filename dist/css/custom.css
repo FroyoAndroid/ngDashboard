@@ -8,3 +8,13 @@
 .user button{
     margin-bottom: 10px;
 }
+
+td.vertical-align{
+    vertical-align: middle;
+}
+
+.user-row td img{
+    border-radius: 50%;
+    margin: 0 auto;
+    display: inherit;
+}

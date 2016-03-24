@@ -3,12 +3,11 @@
  */
 (function () {
     var dashboard = angular.module('dashboard', []);
-    dashboard.controller('dashboardController', ['$rootScope', '$scope', 'users', function ($rootScope, $scope, users) {
+    dashboard.controller('dashboardController', ['$rootScope', '$scope', function ($rootScope, $scope) {
 
         $rootScope.bodyLayout = 'hold-transition skin-blue layout-top-nav';
         $rootScope.sectionTitle = "Users";
-        $rootScope.users = users.all();
-        $rootScope.usermenu = true;
+        $rootScope.usermenu = "users";
 
     }]);
 })();

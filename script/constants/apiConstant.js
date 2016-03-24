@@ -9,5 +9,7 @@
     api.constant('UPLOAD_FILE','http://amasilive.com/api/public/index.php/upload');
     api.constant('CREATE_POST','http://amasilive.com/api/public/index.php/create/post');
     api.constant('GET_EVENTS','http://amasilive.com/api/public/index.php/events');
+    api.constant('GET_USERS','http://amasilive.com/api/public/index.php/users');
+    api.constant('EDIT_USER_ROLE','http://amasilive.com/api/public/index.php/edit/role/user');
 
 })();

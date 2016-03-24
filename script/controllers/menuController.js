@@ -3,12 +3,11 @@
  */
 (function () {
     var menu = angular.module('menu', []);
-    menu.controller('menuController', ['$rootScope', '$scope', 'users', 'posts', function ($rootScope, $scope, users, posts) {
+    menu.controller('menuController', ['$rootScope', '$scope', 'posts', function ($rootScope, $scope, posts) {
 
         $scope.usermenu = function () {
             $rootScope.sectionTitle = "Users";
-            $rootScope.users = users.all();
-            $rootScope.menu = "user";
+            $rootScope.menu = "users";
             console.log('user-menu');
         };
 

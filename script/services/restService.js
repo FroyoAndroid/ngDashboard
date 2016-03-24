@@ -3,120 +3,29 @@
  */
 (function () {
     // var api = angular.module('amasiApi', ['$http']);
-    webpanel.factory('users', function () {
+    webpanel.factory('$users', function ($http, $q, GET_USERS,EDIT_USER_ROLE) {
 
-        //Some fake testing data
-        var users = [
-            {
-                "id": "1",
-                "name": "ABC4",
-                "role": "APP USR",
-                "profile_img": "dist/img/user1-128x128.jpg",
-                "email": "abc@gmail.com",
-                "city": "California"
-            },
-            {
-                "id": "2",
-                "name": "ABC1",
-                "role": "APP USR",
-                "profile_img": "dist/img/user6-128x128.jpg",
-                "email": "abc@gmail.com",
-                "city": "California"
-            },
-            {
-                "id": "3",
-                "name": "ABC2",
-                "role": "AGENT",
-                "profile_img": "dist/img/user3-128x128.jpg",
-                "email": "abc@gmail.com",
-                "city": "California"
-            },
-            {
-                "id": "4",
-                "name": "ABC2",
-                "role": "APP USR",
-                "profile_img": "dist/img/user5-128x128.jpg",
-                "email": "abc@gmail.com",
-                "city": "California"
-            },
-            {
-                "id": "1",
-                "name": "ABC4",
-                "role": "APP USR",
-                "profile_img": "dist/img/user1-128x128.jpg",
-                "email": "abc@gmail.com",
-                "city": "California"
-            },
-            {
-                "id": "2",
-                "name": "ABC1",
-                "role": "APP USR",
-                "profile_img": "dist/img/user6-128x128.jpg",
-                "email": "abc@gmail.com",
-                "city": "California"
-            },
-            {
-                "id": "3",
-                "name": "ABC2",
-                "role": "AGENT",
-                "profile_img": "dist/img/user3-128x128.jpg",
-                "email": "abc@gmail.com",
-                "city": "California"
-            },
-            {
-                "id": "4",
-                "name": "ABC2",
-                "role": "APP USR",
-                "profile_img": "dist/img/user5-128x128.jpg",
-                "email": "abc@gmail.com",
-                "city": "California"
-            },
-            {
-                "id": "1",
-                "name": "ABC4",
-                "role": "APP USR",
-                "profile_img": "dist/img/user1-128x128.jpg",
-                "email": "abc@gmail.com",
-                "city": "California"
-            },
-            {
-                "id": "2",
-                "name": "ABC1",
-                "role": "APP USR",
-                "profile_img": "dist/img/user6-128x128.jpg",
-                "email": "abc@gmail.com",
-                "city": "California"
-            },
-            {
-                "id": "3",
-                "name": "ABC2",
-                "role": "AGENT",
-                "profile_img": "dist/img/user3-128x128.jpg",
-                "email": "abc@gmail.com",
-                "city": "California"
-            },
-            {
-                "id": "4",
-                "name": "ABC2",
-                "role": "APP USR",
-                "profile_img": "dist/img/user5-128x128.jpg",
-                "email": "abc@gmail.com",
-                "city": "California"
-            }
-        ];
-
+        var getUsers = function(){
+            var deferred = $q.defer();
+            $http.get(GET_USERS).success(function (success) {
+                deferred.resolve(success);
+            }, function (error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        };
+        var setRole = function(user){
+            var deferred = $q.defer();
+            $http.post(EDIT_USER_ROLE,user).success(function (success) {
+                deferred.resolve(success);
+            }, function (error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        };
         return {
-            all: function () {
-                return users;
-            },
-            get: function (chatId) {
-                for (var i = 0; i < users.length; i++) {
-                    if (users[i].id === parseInt(chatId)) {
-                        return users[i];
-                    }
-                }
-                return null;
-            }
+            all: getUsers,
+            setRole: setRole
         };
 
     });
