@@ -13,7 +13,7 @@
                 <th>Action</th>
             </tr>
             <tr class="user-row" ng-repeat="user in users track by $index">
-                <td><img ng-src="{{user.profile}}"/></td>
+                <td><img ng-src="{{user.profile}}" style="width:50px;height:50px;"/></td>
                 <td class="vertical-align"><span>{{user.first_name}}</span> <span>{{user.last_name}}</span></td>
                 <td class="vertical-align"><span>{{user.email}}</span></td>
                 <td>
