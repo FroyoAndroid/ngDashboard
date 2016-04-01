@@ -34,6 +34,12 @@
             $rootScope.sectionTitle = "Upload Video";
             $rootScope.menu = "video";
             console.log('video-menu');
+        };
+
+        $scope.premiummenu = function(){
+            $rootScope.sectionTitle = "Upload Video to Selected Category";
+            $rootScope.menu = "premium";
+            console.log('video-menu');
         }
 
     }]);
