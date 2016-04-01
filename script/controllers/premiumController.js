@@ -3,7 +3,7 @@
  */
 (function(){
 
-    webpanel.controller('videoController',['$scope', '$newsService', '$event', '$videoService' , function($scope,$newsService,$event,$videoService){
+    webpanel.controller('premiumController',['$scope', '$newsService', '$event', '$videoService' , function($scope,$newsService,$event,$videoService){
 
         var formdata = new FormData();
         $scope.getTheFiles = function ($files) {
@@ -20,7 +20,7 @@
                 post.video_src = result.message.url;
 
                 // admin video will go to selected
-                //post.category = "SELECTED";
+                post.category = "SELECTED";
                 $videoService.createPost(post).then(function(result){
                     alert('Video Uploaded');
                     console.log(result);
