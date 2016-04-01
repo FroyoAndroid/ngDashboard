@@ -18,6 +18,9 @@
             console.log(post);
             $newsService.upload(formdata).then(function(result){
                 post.video_src = result.message.url;
+
+                // admin video will go to selected
+                post.category = "SELECTED";
                 $videoService.createPost(post).then(function(result){
                     alert('Video Uploaded');
                     console.log(result);
