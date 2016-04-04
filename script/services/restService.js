@@ -159,6 +159,21 @@
         return {
             createPost : createPost
         }
-    });
+    }) 
+    
+    webpanel.factory('$notification',function($http, $q, PUSH){
+        var _push = function(notification){
+            var deferred = $q.defer();
+            $http.post(PUSH, notification).success(function (success) {
+                deferred.resolve(success);
+            }, function (error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        }
+        return{
+            push: _push
+        }
+    })
 
 })();

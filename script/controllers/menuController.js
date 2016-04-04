@@ -40,6 +40,13 @@
             $rootScope.sectionTitle = "Upload Video to Selected Category";
             $rootScope.menu = "premium";
             console.log('video-menu');
+        };
+
+
+        $scope.pushmenu = function(){
+            $rootScope.sectionTitle = "Send Push Notification";
+            $rootScope.menu = "notification";
+            console.log('notification-menu');
         }
 
     }]);
