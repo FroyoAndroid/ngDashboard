@@ -144,9 +144,9 @@
             upload: upload,
             createNews: createNews
         }
-    })
+    });
 
-    webpanel.factory('$videoService', function($http, $q, CREATE_POST){
+    webpanel.factory('$videoService', function($http, $q, CREATE_POST, CREATE_PREMIUM_POST){
         var createPost = function(post){
             var deferred = $q.defer();
             $http.post(CREATE_POST, post).success(function (success) {
@@ -156,10 +156,22 @@
             });
             return deferred.promise;
         };
+
+        var createPremiumPost = function(post){
+            var deferred = $q.defer();
+            $http.post(CREATE_PREMIUM_POST, post).success(function (success) {
+                deferred.resolve(success);
+            }, function (error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        };
+        
         return {
-            createPost : createPost
+            createPost : createPost,
+            createPremiumPost : createPremiumPost
         }
-    }) 
+    });
     
     webpanel.factory('$notification',function($http, $q, PUSH){
         var _push = function(notification){
@@ -170,7 +182,7 @@
                 deferred.reject(error);
             });
             return deferred.promise;
-        }
+        };
         return{
             push: _push
         }
