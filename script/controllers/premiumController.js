@@ -18,7 +18,7 @@
             console.log(post);
             $newsService.upload(formdata).then(function(result){
                 post.video_src = result.message.url;
-                $videoService.createPost(post).then(function(result){
+                $videoService.createPremiumPost(post).then(function(result){
                     alert('Video Uploaded');
                     console.log(result);
                 },function(error){
