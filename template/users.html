@@ -11,14 +11,25 @@
                 <th>User Name</th>
                 <th>Email</th>
                 <th>Action</th>
+                <th>Status</th>
             </tr>
             <tr class="user-row" ng-repeat="user in users track by $index">
                 <td><img ng-src="{{user.profile}}" style="width:50px;height:50px;"/></td>
                 <td class="vertical-align"><span>{{user.first_name}}</span> <span>{{user.last_name}}</span></td>
                 <td class="vertical-align"><span>{{user.email}}</span></td>
                 <td>
-                    <button type="submit" ng-if="(user.role == 'GENERAL')" class="btn btn-primary" ng-click="approve($index)">Approve</button>
-                    <button type="submit" ng-if="(user.role !== 'GENERAL')" class="btn btn-danger" ng-click="reject($index)">Reject</button>
+                    <button type="submit"  class="btn btn-success"
+                            ng-click="approve($index)">Approve
+                    </button>
+                    <button type="submit"  class="btn btn-info"
+                            ng-click="reject($index)">Reject
+                    </button>
+                    <button type="submit" class="btn btn-danger"
+                            ng-click="reject($index)">Ban or Delete
+                    </button>
+                </td>
+                <td>
+                    <span>{{user.role}}</span>
                 </td>
             </tr>
 

@@ -146,7 +146,7 @@
         }
     });
 
-    webpanel.factory('$videoService', function($http, $q, CREATE_POST, CREATE_PREMIUM_POST){
+    webpanel.factory('$videoService', function($http, $q, CREATE_POST, CREATE_PREMIUM_POST, PENDING_VIDEOS){
         var createPost = function(post){
             var deferred = $q.defer();
             $http.post(CREATE_POST, post).success(function (success) {
@@ -166,10 +166,21 @@
             });
             return deferred.promise;
         };
+
+        var showPendingVideos  = function(){
+            var deferred = $q.defer();
+            $http.get(PENDING_VIDEOS).success(function (success) {
+                deferred.resolve(success);
+            }, function (error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        };
         
         return {
             createPost : createPost,
-            createPremiumPost : createPremiumPost
+            createPremiumPost : createPremiumPost,
+            showPendingVideos : showPendingVideos
         }
     });
     

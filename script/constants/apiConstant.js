@@ -13,5 +13,6 @@
     api.constant('GET_USERS','http://amasilive.com/api/public/index.php/users');
     api.constant('EDIT_USER_ROLE','http://amasilive.com/api/public/index.php/edit/role/user');
     api.constant('PUSH','http://amasilive.com/api/public/index.php/push');
+    api.constant('PENDING_VIDEOS','http://amasilive.com/api/public/index.php/pending/videos');
 
 })();

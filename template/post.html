@@ -1,0 +1,33 @@
+<div class="box box-warning" ng-controller="postController">
+    <div class="box-header with-border">
+        <h3 class="box-title">Videos</h3>
+        <button class="btn btn-success" ng-click="showList()">Refresh</button>
+        <button class="btn btn-success" ng-click="showPending()">Show Pending</button>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table class="table table-bordered">
+            <tbody>
+            <tr>
+                <th>Video Title</th>
+                <th>Like</th>
+                <th>Action</th>
+                <th>Status</th>
+            </tr>
+            <tr ng-repeat="video in videos track by $index | filter: video.post_status : 'PENDING'">
+                <td><span>{{video.post_title}}</span></td>
+                <td><span>{{video.likes}}</span></td>
+                <td>
+                    <button type="submit" class="btn btn-success"
+                            ng-click="approve($index)">Approve
+                    </button>
+                    <button type="submit" class="btn btn-info"
+                            ng-click="reject($index)">Reject
+                    </button>
+                </td>
+                <td><span>{{video.post_status}}</span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
