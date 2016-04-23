@@ -13,11 +13,12 @@
         <!-- Main content -->
         <section class="content">
             <div ng-if="($root.menu ==='users')" ng-include="'./template/users.html'"></div>
-            <div class="post" ng-if="($root.menu ==='post')" ng-repeat="post in posts">
+<!--            <div class="post" ng-if="($root.menu ==='post')" ng-repeat="post in posts">
                 <div><span>Title: {{post.post_title}}</span><span class="pull-right">Status: {{post.status}}</span></div>
                 <iframe id="video" width="420" height="315" src="//www.youtube.com/embed/9B7te184ZpQ?rel=0" frameborder="0" allowfullscreen></iframe>
                 <button type="button" style="margin:12px;" class="pull-right" ng-style="{'visibility' : (post.showbtn)? 'visible' : 'hidden'}" class="btn btn-default">APPROVE</button>
-            </div>
+            </div>-->
+            <div ng-if="($root.menu ==='post')" ng-include="'./template/post.html'"></div>
             <div ng-if="($root.menu ==='event')" ng-include="'./template/event.html'"></div>
             <div ng-if="($root.menu ==='news')" ng-include="'./template/news.html'"></div>
             <div ng-if="($root.menu ==='video')" ng-include="'./template/video.html'"></div>

@@ -17,19 +17,25 @@
         $scope.uploadVideo = function(post){
             console.log(post);
             $newsService.upload(formdata).then(function(result){
+              if(result.status === "success"){
                 post.video_src = result.message.url;
-
-                // admin video will go to selected
-                //post.category = "SELECTED";
                 $videoService.createPost(post).then(function(result){
-                    alert('Video Uploaded');
-                    console.log(result);
+                  if(result.status === "success"){
+                      alert('Successfuly Uploaded and created video.');
+                  }else{
+                      alert("Fails!!!");
+                      console.log('Error', result.message);
+                  }
                 },function(error){
                     alert("Upload Fails!!!");
                     console.log(error);
                 })
+              }else{
+                console.log('Error: Uploading File', result.message);
+                alert("Upload Failed!!!");
+              }
             },function(error){
-                alert("Upload Fails!!!");
+                alert("Upload Failed!!!");
                 console.log(error);
             })
         };

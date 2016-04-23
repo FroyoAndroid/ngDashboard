@@ -146,7 +146,7 @@
         }
     });
 
-    webpanel.factory('$videoService', function($http, $q, CREATE_POST, CREATE_PREMIUM_POST){
+    webpanel.factory('$videoService', function($http, $q, CREATE_POST, CREATE_PREMIUM_POST, PENDING_VIDEOS, POST_VIDEO_STATUS, DELETE_VIDEO){
         var createPost = function(post){
             var deferred = $q.defer();
             $http.post(CREATE_POST, post).success(function (success) {
@@ -166,10 +166,43 @@
             });
             return deferred.promise;
         };
+
+        var showVideos  = function(){
+            var deferred = $q.defer();
+            $http.get(PENDING_VIDEOS).success(function (success) {
+                deferred.resolve(success);
+            }, function (error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        };
+
+        var changeStatus = function(postData){
+            var deferred = $q.defer();
+            $http.post(POST_VIDEO_STATUS,postData).success(function (success) {
+                deferred.resolve(success);
+            }, function (error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        };
+        
+        var deleteVideo = function(video_id){
+            var deferred = $q.defer();
+            $http.get(DELETE_VIDEO+video_id).success(function (success) {
+                deferred.resolve(success);
+            }, function (error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        };
         
         return {
             createPost : createPost,
-            createPremiumPost : createPremiumPost
+            createPremiumPost : createPremiumPost,
+            showAllVideos : showVideos,
+            changeStatus : changeStatus,
+            deleteVideo : deleteVideo
         }
     });
     

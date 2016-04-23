@@ -15,22 +15,31 @@
         };
 
         $scope.uploadVideo = function(post){
-            console.log(post);
+            console.log("Post:",post);
             $newsService.upload(formdata).then(function(result){
-                post.video_src = result.message.url;
-                $videoService.createPremiumPost(post).then(function(result){
-                    alert('Video Uploaded');
-                    console.log(result);
-                },function(error){
-                    alert("Upload Fails!!!");
-                    console.log(error);
-                })
+                if(result.status === "success"){
+                  post.video_src = result.message.url;
+                  $videoService.createPremiumPost(post).then(function(result){
+                      if(result.status === "success"){
+                          alert('Video Uploaded to Selected Section.');
+                      }else{
+                          alert("Fails!!!");
+                          console.log('Error', result.message);
+                      }
+                  },function(error){
+                      alert("Upload Fails!!!");
+                      console.log('Error', result.message);
+                  })
+                }else{
+                  console.log('Error: Uploading File', result.message);
+                  alert("Upload Failed!!!");
+                }
             },function(error){
                 alert("Upload Fails!!!");
                 console.log(error);
             })
         };
-        
+
 
     }]);
 
