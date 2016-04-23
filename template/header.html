@@ -10,13 +10,14 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href-void ng-click="usermenu()" style="cursor: pointer;">Users <span class="sr-only">(current)</span></a></li>
-                <li><a href-void ng-click="postmenu()" style="cursor: pointer;">Posts</a></li>
-                <li><a href-void ng-click="eventmenu()" style="cursor: pointer;">Event</a></li>
-                <li><a href-void ng-click="newsmenu()" style="cursor: pointer;">News</a></li>
-                <li><a href-void ng-click="videomenu()" style="cursor: pointer;">Video</a></li>
-                <li><a href-void ng-click="premiummenu()" style="cursor: pointer;">Selected</a></li>
-                <li><a href-void ng-click="pushmenu()" style="cursor: pointer;">Notifications</a></li>
+                <!--<li class="active"><a href-void ng-click="usermenu()" style="cursor: pointer;">Users <span class="sr-only">(current)</span></a></li>-->
+                <li ng-class="($root.menu === 'users')? 'active' : ''"><a href-void ng-click="usermenu()" style="cursor: pointer;">Users</a></li>
+                <li ng-class="($root.menu === 'post')? 'active' : ''"><a href-void ng-click="postmenu()" style="cursor: pointer;">Posts</a></li>
+                <li ng-class="($root.menu === 'event')? 'active' : ''"><a href-void ng-click="eventmenu()" style="cursor: pointer;">Event</a></li>
+                <li ng-class="($root.menu === 'news')? 'active' : ''"><a href-void ng-click="newsmenu()" style="cursor: pointer;">News</a></li>
+                <li ng-class="($root.menu === 'video')? 'active' : ''"><a href-void ng-click="videomenu()" style="cursor: pointer;">Video</a></li>
+                <li ng-class="($root.menu === 'premium')? 'active' : ''"><a href-void ng-click="premiummenu()" style="cursor: pointer;">Selected</a></li>
+                <li ng-class="($root.menu === 'notification')? 'active' : ''"><a href-void ng-click="pushmenu()" style="cursor: pointer;">Notifications</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
         <!-- Navbar Right Menu -->
