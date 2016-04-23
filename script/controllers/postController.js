@@ -66,7 +66,7 @@
         $scope.delete = function (index, video_id) {
             sweet.show({
                 title: 'Confirm',
-                text: 'Delete this Video?',
+                text: 'Delete this Video? \n All comments related to this post will get deleted.',
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#DD6B55',
