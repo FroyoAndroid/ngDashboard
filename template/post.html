@@ -17,7 +17,7 @@
             <tr ng-repeat="video in videos | filter: post_status : status  track by $index ">
                 <td>
                     <span>{{video.post_title}}</span>
-                    <a href="" >Show Video</a>
+                    <a ng-href={{video.video_src}} target="_blank" class="pull-right">Show Video</a>
                 </td>
                 <td><span>{{video.likes}}</span></td>
                 <td>

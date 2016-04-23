@@ -18,7 +18,8 @@
   ],
   "dependencies": {
     "angular-route": "^1.5.0",
-    "angular":"^1.5.0",
-    "angular-datepicker":"*"
+    "angular": "^1.5.0",
+    "angular-datepicker": "*",
+    "angular-sweetalert": "angular-h-sweetalert#^1.4.7"
   }
 }

@@ -7,7 +7,8 @@ var webpanel = angular.module('webpanel',[
     'apiConstant',
     'event',
     'news',
-    'webpanel.directives'
+    'webpanel.directives',
+    'hSweetAlert'
 ]);
 
 webpanel.config(function ($httpProvider) {
