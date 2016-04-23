@@ -53,7 +53,7 @@
                         }, function (error) {
                             sweet.show('Error', 'Unable to ban user.', 'error');
                         });
-                        console.log($scope.videos[index]);
+
 
                     } else {
                         sweet.show('Cancelled', 'Your user is safe :)', 'error');
