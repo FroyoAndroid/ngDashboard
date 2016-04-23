@@ -14,5 +14,7 @@
     api.constant('EDIT_USER_ROLE','http://amasilive.com/api/public/index.php/edit/role/user');
     api.constant('PUSH','http://amasilive.com/api/public/index.php/push');
     api.constant('PENDING_VIDEOS','http://amasilive.com/api/public/index.php/pending/videos');
+    api.constant('POST_VIDEO_STATUS','http://amasilive.com/api/public/index.php/dashboard/video/change/status');
+    api.constant('DELETE_VIDEO','http://amasilive.com/api/public/index.php/dashboard/video/delete/');
 
 })();

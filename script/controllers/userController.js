@@ -24,5 +24,9 @@
             $users.setRole($scope.users[index]);
         };
 
+        $scope.delete = function(index){
+
+        };
+
     }])
 })();
