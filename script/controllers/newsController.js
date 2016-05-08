@@ -19,7 +19,11 @@
             $newsService.upload(formdata).then(function(result){
                 news.img_name = result.message.url;
                 $newsService.createNews(news).then(function(result){
-                    alert("News Created Successfully");
+                    if(result.status  === "success"){
+                        alert("News Created Successfully");
+                    }else{
+                        alert("Fill all the fields");
+                    }
                     console.log(result);
                 },function(error){
                     alert("Unable To Create News");
